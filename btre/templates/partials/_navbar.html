@@ -14,7 +14,8 @@
           class='nav-item' active mr-3
           {% else %}
           class="nav-item mr-3"
-          {% endif %}>
+          {% endif %}
+          >
             <a class="nav-link" href="{% url 'about' %}">Home</a>
           </li>
           <li
@@ -47,7 +48,7 @@
         <li class="nav-item mr-3">
         <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link"></a>
         <i class="fas fa-sign-out-alt"></i> logout </a>
-          <form action="{% url 'logout' %}" method=""POST" id="logout">
+          <form action="{% url 'logout' %}" method="POST" id="logout">
             {% csrf_token %}
             <input class="hidden" type="text">
           </form>
