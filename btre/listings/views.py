@@ -3,7 +3,7 @@ from .models import Listing
 from django.core.paginator import Paginator
 from listings.choices import bedroom_choices, state_choices, price_choices
 def index(request):
-    listings = Listing.objects.order('-list_date').filter(is_published=True)
+    listings = Listing.objects.filter(is_published=True).order_by('-list_date')
     paginator = Paginator(listings, 3)
     page = request.GET.get('page')
     paged_listings = paginator.get_page(page)
